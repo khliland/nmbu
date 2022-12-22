@@ -25,9 +25,9 @@
   has.connection <- testURL()
   repo <- testUIB()
   
-  if(has.connection && (!("RcmdrPlugin.NMBU"%in%installed.packages()[,"Package"]) || ("RcmdrPlugin.NMBU"%in%old.packages(repos=c("http://repository.umb.no/R",repo))[,"Package"]))){
+  if(has.connection && (!("RcmdrPlugin.NMBU"%in%installed.packages()[,"Package"]) || ("RcmdrPlugin.NMBU"%in%old.packages(repos=repo)[,"Package"]))){
     cat("Updating RcmdrPlugin.NMBU\n")
-    install.packages("RcmdrPlugin.NMBU", repos=c("http://repository.umb.no/R",repo), lib=lib, dependencies=TRUE, quiet=TRUE)
+    install.packages("RcmdrPlugin.NMBU", repos=repo, lib=lib, dependencies=TRUE, quiet=TRUE)
     
     cat("Loading RcmdrPlugin.NMBU\n")
     try.message <- try(library(RcmdrPlugin.NMBU))
@@ -36,8 +36,8 @@
       install.packages("car", repos = repo, lib=lib, dependencies=TRUE)
       install.packages("lme4", repos = repo, lib=lib, dependencies=TRUE)
       install.packages("pls", repos = repo, lib=lib, dependencies=TRUE)
-      install.packages("mixlm", repos = c('http://repository.umb.no/R',repo), lib=lib, dependencies=TRUE)
-      install.packages("Rcmdr", repos = c('http://repository.umb.no/R',repo), lib=lib, dependencies=TRUE)
+      install.packages("mixlm", repos = repo, lib=lib, dependencies=TRUE)
+      install.packages("Rcmdr", repos = repo, lib=lib, dependencies=TRUE)
       library(RcmdrPlugin.NMBU, quietly = TRUE)
     }
   } else {
