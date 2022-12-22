@@ -50,7 +50,7 @@
   cat("RcmdrPlugin.NMBU version ", utils:::installed.packages()["RcmdrPlugin.NMBU","Version"], "\n\n", sep="")
   
   if(has.connection){
-    the.url <- url('http://repository.umb.no/R/nmbu.message.txt')
+    the.url <- url('http://repository.nmbu.no/R/nmbu.message.txt')
     cat(readLines(the.url)[-(1:4)], "\n", sep="\n")
     close(the.url)
   }
@@ -66,7 +66,7 @@ testURL <- function(){
   a <- NULL
   warn <- getOption("warn")
   options(warn=-1)
-  the.url <- url('https://repository.umb.no/R/nmbu.message.txt')
+  the.url <- url('https://repository.nmbu.no/R/nmbu.message.txt')
   try(a<-readLines(the.url),TRUE)
   close(the.url)
   options(warn=warn)
